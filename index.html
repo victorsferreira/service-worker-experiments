@@ -1,0 +1,28 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="./style.css">
+  <script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+      navigator.serviceWorker.register('./sw.js')
+      .then(function(registration) {
+        // Registration was successful
+        console.log('Sucesso: ', registration);
+      }).catch(function(err) {
+        // registration failed :(
+        console.log('Erro: ', err);
+      });
+    });
+  }
+  </script>
+</head>
+<body>
+  <h1>Service Worker tests</h1>
+  <img src="http://lorempixel.com/400/200/" alt="">
+  <img src="./cachorro.jpg" alt="">
+</body>
+</html>
